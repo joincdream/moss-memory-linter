@@ -1,5 +1,6 @@
 # GCP Service Account & Credentials
-*.json
+my-vertexai-key.json
+*-key.json
 .env
 
 # SQLite Database
