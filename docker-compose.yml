@@ -9,13 +9,14 @@ services:
     ports:
       - "8080:8080"
     volumes:
-      - ./backend/moss_memory.db:/app/moss_memory.db
+      - ./backend/data:/app/data
       - ./my-vertexai-key.json:/app/my-vertexai-key.json
     env_file:
       - ./backend/.env
     environment:
       - GIN_MODE=release
       - OLLAMA_API_BASE=http://host.docker.internal:11434
+      - DB_PATH=/app/data/moss_memory.db
     extra_hosts:
       - "host.docker.internal:host-gateway"
 

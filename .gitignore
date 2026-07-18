@@ -4,6 +4,7 @@ my-vertexai-key.json
 .env
 
 # SQLite Database
+backend/data/
 *.db
 *.db-journal
 *.db-shm

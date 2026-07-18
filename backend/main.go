@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"log"
 	"net/http"
+	"os"
 	"strconv"
 
 	"ai-info/poc/moss/backend/database"
@@ -44,7 +45,10 @@ func main() {
 	log.Println("MOSS GoLang 백엔드 서버 기동 준비...")
 
 	// 1. 데이터베이스 초기화 (SQLite)
-	dbPath := "./moss_memory.db"
+	dbPath := os.Getenv("DB_PATH")
+	if dbPath == "" {
+		dbPath = "./moss_memory.db"
+	}
 	db, err := database.InitDB(dbPath)
 	if err != nil {
 		log.Fatalf("데이터베이스 초기화 실패: %v", err)
