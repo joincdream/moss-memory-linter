@@ -1,0 +1,21 @@
+# GCP Service Account & Credentials
+*.json
+.env
+
+# SQLite Database
+*.db
+*.db-journal
+*.db-shm
+*.db-wal
+
+# Go Build Output
+backend/main
+
+# Node.js dependencies and build output
+frontend/node_modules/
+frontend/dist/
+.eslintcache
+
+# OS logs and config
+.DS_Store
+Thumbs.db
